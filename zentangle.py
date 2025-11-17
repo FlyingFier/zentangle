@@ -28,9 +28,12 @@ def zentangle_polygon(dwg, polygon_points, steps):
         for __ in range(len(polygon_points)):
             polygon_points = add_zentangle_step(dwg, polygon_points, step, steps)
 
+def zentanlge_from_points(points, steps):
+    dwg = svgwrite.Drawing(size=(480, 480))
+    zentangle_polygon(dwg, points, steps)
+    return dwg
 
 def main():
-    # here I want the
     dwg = svgwrite.Drawing("zentangling.svg", size=(500, 500))
 
     # points = [(100, 400), (250, 100), (400, 400)]
